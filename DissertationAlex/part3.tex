@@ -23,14 +23,14 @@
 
 Были рассмотрены существующие решения: Arduino, Raspberry Pi, устройства на базе Android, CubieBoard и BeagleBone.
 
-\bgroup
+\bgroup %Arduino
 \def\arraystretch{1.5}%  1 is the default, change whatever you need
   \begin{longtable}{| p{.2\textwidth} | p{.6\textwidth} | c |} 
   \caption{Arduino} % needs to go inside longtable environment
     \hline
       Критерий & Комментарий & Оценка \\
     \hline
-      Взаимодействие с электро-механическими  устройствами
+      Взаимодействие с электро-механическими устройствами
 
       & Arduino поддерживает прямое программирование портов GPIO, является одной из его самых сильных сторон. 
       
@@ -57,44 +57,123 @@
       & +/$-$ \\
     \hline
   \end{longtable}
-\egroup
+\egroup %Arduino
 
-\begin{table} [htbp]
-  \centering
-  \parbox{15cm}{\caption{Название таблицы}\label{Ts0Sib}}
-%  \begin{center}
-  \begin{tabular}{| p{3cm} || p{3cm} | p{3cm} | p{4cm}l |}
+\pagebreak
+
+\bgroup %Raspberry Pi
+\def\arraystretch{1.5}%  1 is the default, change whatever you need
+  \begin{longtable}{| p{.2\textwidth} | p{.6\textwidth} | c |} 
+  \caption{Raspberry Pi} % needs to go inside longtable environment
+    \hline
+      Критерий & Комментарий & Оценка \\
+    \hline
+      Взаимодействие с электро-механическими устройствами
+
+      & Raspberry Pi поддерживает прямое программирование портов GPIO. Также стоит отметить, факт существования проекта raspberry-gpio-python позволяющего управлять GPIO на высокоуровневом языке Python.  
+      & + \\
+    \hline
+      Беспроводное взаимодействие
+
+      & Реализация взаимодействия по Bluetooth и WiFi возможна путем подключения к USB порту Raspberry Pi WiFi/Bluetooth адаптера. Также заявляется о успешной поддержке NFC.
+      
+      & + \\
+    \hline
+      Многозадачность
+
+      & Raspbian, также как и Debian, является многозадачной операционной системой и более того предоставляет средства для разработки многопоточных приложений.
+
+      & + \\
+    \hline
+      Скоростная и качественная разработка
+      
+      & Официально поддерживаемым языком для разработки приложений на Raspberry Pi является Python, для разработки на котором большое количество различных IDE.
+
+      Для Raspberry Pi в сети Интернет можно найти большое количество документации и различных учебных материалов. Также вокруг Raspberry Pi сформировалось очень большое и очень активное сообщество разработчиков.
+
+      & + \\
+    \hline
+  \end{longtable}
+\egroup %Raspberry Pi
+
+\pagebreak
+
+\bgroup %Android
+\def\arraystretch{1.5}%  1 is the default, change whatever you need
+  \begin{longtable}{| p{.2\textwidth} | p{.6\textwidth} | c |} 
+  \caption{Устройства на базе Android} % needs to go inside longtable environment
+    \hline
+      Критерий & Комментарий & Оценка \\
+    \hline
+      Взаимодействие с электро-механическими устройствами
+
+      & Существующие Android смартфоны не имеют GPIO портов и возможности прямого взаимодействия с электро-механическими устройствами. Тем не менее, Android предоставляет два обходных решения — Usb Accessory and Android ADK.
+
+      & +/$-$ \\
+    \hline
+      Беспроводное взаимодействие
+
+      & Практически все современные смартфоны на Android содержат WiFi и Bluetooth модули. Некоторые модели, например Samsung Galaxy Nexus, имеют также и NFC.
+      
+      & + \\
+    \hline
+      Многозадачность
+
+      & Android является многозадачной операционной системой, более того Android SDK предоставляет простые и удобные средства для разработки многопоточных приложений.
+
+      & + \\
+    \hline
+      Скоростная и качественная разработка
+      
+      & Стандартным языком для разработки приложений для Android является язык Java, а стандартной IDE — Eclipse.
+
+      Официальный сайт Android Developers предоставляет исчерпывающее количество документации и учебных материалов по разработке приложений на базе Android SDK. 
+
+      Также на тему разработки приложений для Android было сделано большое количество докладов на различных конференциях, написано огромное количество статей и обсуждений на различных форумах.
+
+      & + \\
+    \hline
+  \end{longtable}
+\egroup %Android
+
+\pagebreak
+
+\bgroup %BeagleBone and CubieBoard
+\def\arraystretch{1.5}%  1 is the default, change whatever you need
+  \begin{longtable}{| p{.2\textwidth} | p{.6\textwidth} | p{1cm} | p{1cm} |} 
+  \caption{BeagleBone и CubieBoard} % needs to go inside longtable environment
   \hline
+    Критерий & Комментарий & \rotatebox{90}{BeagleBone} & \rotatebox{90}{CubieBoard} \\
   \hline
-  Месяц   & \centering $T_{min}$, К & \centering $T_{max}$, К &\centering  $(T_{max} - T_{min})$, К & \\
+    Взаимодействие с электро-механическими устройствами
+
+    & BeagleBone и CubieBoard поддерживают прямое программирование портов GPIO. Для BeagleBoard это возможно по-умолчанию средствами языка Bash, для CubieBoard с начала придется поставить Linux в качестве ОС.
+
+    & + & +/$-$ \\
   \hline
-  Декабрь &\centering  253.575   &\centering  257.778    &\centering      4.203  &   \\
-  Январь  &\centering  262.431   &\centering  263.214    &\centering      0.783  &   \\
-  Февраль &\centering  261.184   &\centering  260.381    &\centering     $-$0.803  &   \\
+    Беспроводное взаимодействие
+
+    & Реализация взаимодействия по Bluetooth и WiFi теоретически возможна путем подключения к USB порту соответствующих адаптеров, однако на практике сообщается о проблемах и необходимости внесения патчей в ядро системы.
+    
+    & + & +/$-$ \\
   \hline
+    Многозадачность
+
+    & Armstrong, Android, Ubuntu как и все другие популярные варианты ОС для CubieBoard и BeagleBone являются многозадачными операционными системами.
+
+    & + & + \\
   \hline
-  \end{tabular}
-%  \end{center}
-\end{table}
+    Скоростная и качественная разработка
+    
+    & CubieBoard и BeagleBone проигрывают Raspberry Pi в качестве документации разработчика, числе обучающих материалов, размере и активности коммьюнити разработчиков, наличию сторонних расширений и приложений, а также другим смежным параметрам. 
 
-%\newpage
-%============================================================================================================================
+    & +/$-$ & +/$-$\\
+  \hline
+  \end{longtable}
+\egroup %BeagleBone and CubieBoard
 
-\section{Параграф - два} \label{sect3_2}
+По результатам сравнительного анализа возможных решений в качестве средства для реализации прототипа контроллера замка был выбран Raspberry Pi.
 
-Некоторый текст.
-
-%\newpage
-%============================================================================================================================
-
-\section{Параграф с подпараграфами} \label{sect3_3}
-
-\subsection{Подпараграф - один} \label{subsect3_3_1}
-
-Некоторый текст.
-
-\subsection{Подпараграф - два} \label{subsect3_3_2}
-
-Некоторый текст.
+\section{Обзор решений для реализации прототипа мобильного приложения} \label{sect3_3}
 
 \clearpage
